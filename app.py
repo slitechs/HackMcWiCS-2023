@@ -1,16 +1,19 @@
-# Import modules
-import object_detection as od
-import text_detection as td
+from flask import Flask, render_template
 
-# Detect text from an image and print it out
-result = td.detect_text('receipt.jpg')
+import backend, pantry
 
-# Print out the words
-print(result)
+app = Flask(__name__)
 
-# Detect objects from an image
-output = od.query("groceries.jpg")
+@app.route('/')
+def index():
+    print("Request for index page received.")
+    return render_template('index.html')
 
-# Print out the name of the object
-# for item in output:
-    # print(item['label'])
+
+@app.route('/pantry')
+def pantry_page():
+    print("Request for index page received.")
+    return render_template('index.html', pantry_items=pantry.foods)
+
+if __name__ == '__main__':
+   app.run()

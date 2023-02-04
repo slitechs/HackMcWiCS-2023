@@ -1,4 +1,5 @@
 # Object detection in an image.
+# For identifying food items in an image.
 
 # To send HTTP requests.
 import requests, os

@@ -1,4 +1,5 @@
 # Text detection in an image.
+# For identifying items in a receipt.
 
 def detect_text(path):
     """Detects text in the file."""
@@ -14,9 +15,9 @@ def detect_text(path):
     response = client.text_detection(image=image)
     texts = response.text_annotations
 
+    # Store words in a list
     items = []
     
-
     for text in texts:
 
         # Get the words only.
