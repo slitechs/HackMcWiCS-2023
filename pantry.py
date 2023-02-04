@@ -4,14 +4,14 @@
 from backend import object_detection as od, text_detection as td
 from collections import Counter
 
-# Detect text from an image and print it out
-tdresult = td.detect_text('receipt1.jpg')
+# Detect text from an image
+tdresult = td.detect_text('uploads/receipt1.jpg')
 
 # Print out the words
-print(tdresult)
+# print(tdresult)
 
 # Detect objects from an image
-output = od.query("groceries.jpg")
+output = od.query("uploads/groceries.jpg")
 
 odresult = []
 
@@ -23,7 +23,7 @@ print(odresult)
 
 def get_items():
     # Detect objects from an image
-    output = od.query("groceries.jpg")
+    output = od.query("uploads/groceries.jpg")
 
     odresult = []
 
@@ -35,12 +35,14 @@ def get_items():
 
 items = Counter(odresult).most_common()
 
-print(items)
+# print(items)
 
 foods = {}
 
-# Get foods
+# Organize objects by item and amount
 for x in items:
     foods.update({x[0]:x[1]})
 
 print(foods)
+
+# Get foods
