@@ -13,10 +13,17 @@ def detect_text(path):
 
     response = client.text_detection(image=image)
     texts = response.text_annotations
-    print('Texts:')
+
+    items = []
+    
 
     for text in texts:
-        print(text.description)
+
+        # Get the words only.
+        if text.description.isalpha():
+            items.append(text.description)
+
+    return items
 
     if response.error.message:
         raise Exception(
