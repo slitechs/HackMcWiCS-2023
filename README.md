@@ -1,4 +1,6 @@
-# HackMcWiCS-2023
+# PantryPal
+
+Keep track of what's in your pantry!
 
 To run:
 
