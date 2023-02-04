@@ -46,15 +46,7 @@ def upload_file():
         else:
             return "File type not supported."
 
-    return '''
-    <!doctype html>
-    <title>PantryPal</title>
-    <h1>Upload Image</h1>
-    <form method=post enctype=multipart/form-data>
-      <input type=file name=file>
-      <input type=submit value=Upload>
-    </form>
-    '''
+    return render_template('upload.html')
 
 
 # Pantry page
