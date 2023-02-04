@@ -1,6 +1,6 @@
 # PantryPal
 
-Keep track of what's in your pantry!
+PantryPal helps you keep track of your groceries in order to reduce the stress of figuring out what to cook with the ingredients you have and prevent food waste.
 
 To run:
 
