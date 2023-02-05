@@ -4,7 +4,7 @@ import os
 from werkzeug.utils import secure_filename
 
 # Imports for funcionality
-import backend, pantry
+import backend, pantry, search
 
 
 UPLOAD_FOLDER = './uploads'
@@ -54,6 +54,17 @@ def upload_file():
 def pantry_page():
     print("Request for index page received.")
     return render_template('pantry.html', pantry_items=pantry.foods)
+
+# Recipe page (redirects to web search)
+@app.route('/recipes', methods=['GET', 'POST'])
+def get_recipe():
+    if request.method == 'POST':
+        search_term = request.form['text']
+        
+        search.search_web(search_term)
+        
+
+    return render_template('recipe.html')
 
 if __name__ == '__main__':
    app.run()
