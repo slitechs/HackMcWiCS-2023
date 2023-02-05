@@ -11,9 +11,7 @@ tdresult = td.detect_text('uploads/'+'receipt.jpg')
 # print(tdresult)
 
 
-# Detect objects from an image
-output = od.query('uploads/groceries.jpg')
-
+# Object detection in images, for pantry items
 odresult = []
 foods = {}
 
@@ -28,7 +26,8 @@ def get_items(file_name):
     output = od.query("uploads/"+file_name)
 
     for item in output:
-        odresult.append(item['label'])
+        if item['label'] != "dining table": # Prevents labling surfaces as dining tables
+            odresult.append(item['label'])
 
     items = Counter(odresult).most_common()
 

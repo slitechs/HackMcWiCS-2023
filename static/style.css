@@ -1,3 +1,26 @@
 h1 {
     text-align: center;
+    font-size: 60px;
+}
+
+.nav {
+    text-align: center;
+}
+
+body {
+    background-color: #C2E1C2;
+}
+
+a.link {
+    text-decoration: none;
+    border-style: solid;
+    border-color: black;
+    padding: 10px;
+    margin: 5px;
+    color: black;
+}
+
+.homepage-text {
+    margin: auto;
+    width: 50%;
 }
