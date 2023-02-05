@@ -46,4 +46,3 @@ def get_items(filename):
 
 
     return foods
-
