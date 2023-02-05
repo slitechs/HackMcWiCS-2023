@@ -48,11 +48,10 @@ def upload_file():
 
     return render_template('upload.html')
 
-
 # Pantry page
 @app.route('/pantry')
 def pantry_page():
-    print("Request for index page received.")
+    print("Request for pantry page received.")
     return render_template('pantry.html', pantry_items=pantry.foods)
 
 # Recipe page (redirects to web search)

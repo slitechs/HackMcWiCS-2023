@@ -22,9 +22,8 @@ def get_items(filename):
 
     for item in output:
         print(item)
-        if item['label'] != "dining table": # Prevents labling surfaces as dining tables
+        if item['label'] != "dining table" and item['label'] != "bottle": # Prevents labling non-foods
             result.append(item['label'])
-
     
 
     # Detect text from an image

@@ -13,8 +13,7 @@
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/static/style.css">
 
-    <!-- JavaScript -->
-    <script></script>
+   
 
 </head>
 
@@ -32,14 +31,29 @@
     <br>
 
     <div class="content">
-    <h2>Upload Image</h2>
+    <h2>Upload Image:</h2>
     
     <form method=post enctype=multipart/form-data>
-        <input type=file name=file>
+        <input type=file name=file onchange="previewImage(event)">
         <input type=submit value=UPLOAD style="padding:10px; font-family: Poppins; background-color: white;">
     </form>
 
+    <br>
+    
+    <div>
+        <img style="height:100%;width:100%;display:none" id="your-image" />
     </div>
+
+    </div>
+
+    <!-- To preview image before submitting. -->
+    <script>
+        var previewImage = function (event) {
+                var preview = document.getElementById('your-image');
+                preview.src = URL.createObjectURL(event.target.files[0]);
+                preview.style.display = "block";
+            };
+    </script>
 
 </body>
 
