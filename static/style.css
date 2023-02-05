@@ -9,6 +9,7 @@ h1 {
 
 body {
     background-color: #C2E1C2;
+    font-family: Poppins;
 }
 
 a.link {
@@ -18,9 +19,10 @@ a.link {
     padding: 10px;
     margin: 5px;
     color: black;
+    background-color: white;
 }
 
-.homepage-text {
+.content {
     margin: auto;
     width: 50%;
 }
