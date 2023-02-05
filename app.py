@@ -42,7 +42,7 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return "Successfully uploaded."
+            return render_template('pantry.html', pantry_items=pantry.get_items(filename))
         else:
             return "File type not supported."
 
@@ -53,7 +53,7 @@ def upload_file():
 @app.route('/pantry')
 def pantry_page():
     print("Request for index page received.")
-    return render_template('index.html', pantry_items=pantry.foods)
+    return render_template('pantry.html', pantry_items=pantry.foods)
 
 if __name__ == '__main__':
    app.run()

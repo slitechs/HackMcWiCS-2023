@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>PantryPal</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/static/style.css">
+
+    <!-- JavaScript -->
+    <script></script>
+
+</head>
+
+<body>
+
+    <a href={{url_for('index')}}>HOME</a>
+    <a href={{url_for('upload_file')}}>UPLOAD IMAGE</a>
+    
+    <h2>My Groceries:</h2>
+    {{pantry_items}}
+
+</body>
+
+</html>
